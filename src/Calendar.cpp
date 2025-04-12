@@ -1,7 +1,7 @@
 //
 // Programmer:    Craig Stuart Sapp <craig@ccrma.stanford.edu>
 // Creation Date: Wed Jul 14 19:22:23 PDT 1999
-// Last Modified: Wed Oct  7 15:35:12 PDT 2015 Update for new compiler.
+// Last Modified: Sat Apr 12 02:35:20 PM PDT 2025 Update to use strncpy.
 // Filename:      Calendar.cpp
 // Syntax:        C++ 
 //
@@ -27,10 +27,11 @@
 
 
 #include "Calendar.h"
+#include <cstring>
 #include <iomanip>
-#include <string.h>
-#include <stdio.h>
 #include <sstream>
+#include <stdio.h>
+#include <string.h>
 
 using namespace std;
 
@@ -501,7 +502,7 @@ ostream& Calendar::printYear(ostream& out, int ttype) {
       }
       out << centerline(buf, yearbuf, 20, ' ') << '\n';
       for (i=1; i<=12; i++) {
-         std::strncpy(str_jan, s_month[i].str().c_str(), 8 * 21);
+         strncpy(str_jan, s_month[i].str().c_str(), 8 * 21);
          int q;
          for (q=0; q<=length; q++) {
             if (str_jan[q] == '\n') {
@@ -526,18 +527,18 @@ ostream& Calendar::printYear(ostream& out, int ttype) {
          printMonth(s_month[i], i, 1);
          s_month[i] << ends;
       }
-      std::strncpy(str_jan, s_month[1].str().c_str(), 8 * 21);
-      std::strncpy(str_feb, s_month[2].str().c_str(), 8 * 21);
-      std::strncpy(str_mar, s_month[3].str().c_str(), 8 * 21);
-      std::strncpy(str_apr, s_month[4].str().c_str(), 8 * 21);
-      std::strncpy(str_may, s_month[5].str().c_str(), 8 * 21);
-      std::strncpy(str_jun, s_month[6].str().c_str(), 8 * 21);
-      std::strncpy(str_jul, s_month[7].str().c_str(), 8 * 21);
-      std::strncpy(str_aug, s_month[8].str().c_str(), 8 * 21);
-      std::strncpy(str_sep, s_month[9].str().c_str(), 8 * 21);
-      std::strncpy(str_oct, s_month[10].str().c_str(), 8 * 21);
-      std::strncpy(str_nov, s_month[11].str().c_str(), 8 * 21);
-      std::strncpy(str_dec, s_month[12].str().c_str(), 8 * 21);
+      strncpy(str_jan, s_month[1].str().c_str(), 8 * 21);
+      strncpy(str_feb, s_month[2].str().c_str(), 8 * 21);
+      strncpy(str_mar, s_month[3].str().c_str(), 8 * 21);
+      strncpy(str_apr, s_month[4].str().c_str(), 8 * 21);
+      strncpy(str_may, s_month[5].str().c_str(), 8 * 21);
+      strncpy(str_jun, s_month[6].str().c_str(), 8 * 21);
+      strncpy(str_jul, s_month[7].str().c_str(), 8 * 21);
+      strncpy(str_aug, s_month[8].str().c_str(), 8 * 21);
+      strncpy(str_sep, s_month[9].str().c_str(), 8 * 21);
+      strncpy(str_oct, s_month[10].str().c_str(), 8 * 21);
+      strncpy(str_nov, s_month[11].str().c_str(), 8 * 21);
+      strncpy(str_dec, s_month[12].str().c_str(), 8 * 21);
 
       char* string[12];
       string[0] = str_jan;
@@ -865,12 +866,10 @@ void Calendar::setLocale(int aLocale) {
 }
 
 
-
 ///////////////////////////////////////////////////////////////////////////
 //
 // private functions
 //
-
 
 //////////////////////////////
 //
@@ -901,7 +900,6 @@ char* Calendar::centerline(char* buffer, const char* string,
 
 
 
-
 //////////////////////////////
 //
 // Calendar::validateMonth -- limits month range between 1 and 12.
@@ -928,8 +926,6 @@ void Calendar::validateDay(int day) {
       exit(1);
    }
 }
-
-
 
 
 

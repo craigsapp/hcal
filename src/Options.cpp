@@ -12,11 +12,12 @@
 
 
 #include "Options.h"
-#include <stdlib.h>
-#include <string.h>
-#include <cctype>
-#include <iostream>
 #include <algorithm>
+#include <cctype>
+#include <cstdlib>
+#include <cstring>
+#include <iostream>
+#include <string>
 
 using namespace std;
 

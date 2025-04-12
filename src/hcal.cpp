@@ -31,11 +31,11 @@
 //       29 Feb 300 Julian =  1 Mar 300 Gregorian proleptic
 //
 
-#include <iostream>
-#include <string.h>
-#include <stdio.h>
-#include "Options.h"
 #include "Calendar.h"
+#include "Options.h"
+#include <cstring>
+#include <iostream>
+#include <cstdio>
 
 using namespace std;
 
