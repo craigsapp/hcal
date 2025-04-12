@@ -1,0 +1,103 @@
+<html>
+<head>
+<title> hcal test interface</title>
+<link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body bgcolor=#c8bbf8>
+<center>
+&nbsp;
+&nbsp;<a href=blank.html target=right><img src=/images/hcal.gif border=0></a> 
+</center>
+
+<form method=get 
+      target=right
+      name="hcal program"
+      action=https://hcal.ccarh.org/cgi-bin/hcal>
+
+<table width=100%>
+<tr><td align=right> year: </td>
+    <td><input type=text size=8 name="year"></td></tr>
+<tr><td align=right> month: </td>
+    <td> <select name="month"> 
+            <option value=all> all
+            <option value=January> January
+            <option value=February> February
+            <option value=March> March
+            <option value=April> April
+            <option value=May> May
+            <option value=June> June
+            <option value=July> July
+            <option value=August> August
+            <option value=September> September
+            <option value=October> October
+            <option value=November> November
+            <option value=December> December
+         </select>
+    </td></tr>
+<tr><td align=right> <a href=locale.html target=right>locale</a>: </td>
+    <td> <select name="locale"> 
+            <option value=Italy> Italy
+            <option value=France> France
+            <option value=Bavaria> Bavaria
+            <option value=Austria> Austria
+            <option value=Lucerne> Lucerne
+            <option value=Hungary> Hungary
+            <option value=Norway> Norway
+            <option value=Zurich> Zurich
+            <option value=England> England
+            <option value=Russia> Russia
+            <option value=Greece> Greece
+            <option value=Turkey> Turkey
+            <option value=Julian> Julian
+            <option value=Gregorian> Gregorian
+         </select>
+    </td></tr>
+
+<tr><td> </td> <td>
+   <input type=submit value=generate>
+</td></tr>
+
+<tr><td colspan=2> <br><b>Other Options:</b><br>
+
+<table width=100%>  
+
+<tr><td valign=top>
+   <input type=checkbox name=label> 
+</td><td bgcolor=#b8abf8> 
+      label calendar (either Julian or Gregorian).
+</td></tr>
+
+<tr><td valign=top>
+   <input type=checkbox name=single> 
+</td><td bgcolor=#b8abf8> 
+      list months in single column. 
+</td></tr>
+
+<tr><td valign=top>
+   <input type=checkbox name=early> 
+</td><td bgcolor=#b8abf8> 
+      check here if year is in the range 1-99.
+</td></tr>
+<tr><td colspan=2>
+<br>
+First day of week:
+<br>
+<select name=firstday>
+<option value=default>   Default
+<option value=monday>    Monday 
+<option value=tuesday>   Tuesday 
+<option value=wednesday> Wednesday 
+<option value=thursday>  Thursday 
+<option value=friday>    Friday 
+<option value=saturday>  Saturday 
+<option value=sunday>    Sunday 
+</select>
+</table>
+</table>
+
+</form>
+</center>
+
+</body>
+</html>

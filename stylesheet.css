@@ -1,0 +1,20 @@
+
+
+html, body {
+	font-size: 14pt;
+	font-family: "Lora", sans-serif;
+	line-height: 1.45;
+}
+
+a {
+	text-decoration: none;
+	color: #00f;
+}
+
+img {
+	-webkit-filter: blur(1px); 
+	-moz-filter:    blur(1px); 
+	-o-filter:      blur(1px); 
+	-ms-filter:     blur(1px); 
+	filter:         blur(1px);
+}

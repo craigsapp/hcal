@@ -1,0 +1,408 @@
+<html>
+<head>
+<title> hcal documentation</title>
+<link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body bgcolor=#eeeeee>
+
+<h1> Historic Calendars of Europe <hr noshade> </h1>
+<pre>
+
+</pre>
+
+
+<a name=1> </a>
+<h1> 1. About Calendar Reform </h1>
+<ul>
+
+<p> The modern calendar of Europe is the Gregorian calendar which 
+was implemented in 1582 by Pope Gregory XIII.  It replaced the 
+Julian calendar, which had been in use since the fourth century.
+The conversion of dates kept in the earlier Julian form requires 
+both precision in the historical identification of the problem and proper 
+calculations.
+
+<p> If everyone in Europe had converted from the Julian calendar to the
+Gregorian calendar at the same time, this program would not be necessary.
+Unfortunately, different regions of Europe adopted the Gregorian calendar
+at different times ranging from the initial adoption by the Roman Catholic
+Church in 1582 through the early twentieth century in countries such
+as Russia, Greece and Turkey.  
+
+<a name=1a> </a>
+</ul>
+<h2> 1a. The Solar-Year Problem </h2>
+<ul>
+
+<p> The problem which both the Gregorian and Julian calendars try to fix
+is that the solar year is not exactly 365 days long.  Both calendars try
+to keep the same annual solar events on the same days of the calendar
+year.  The Julian calendar makes the assumption that the year is 365.25
+days long, while the Gregorian calendar assumes that the year is 365.2425
+days long.
+
+<a name=1b> </a>
+</ul>
+<h2> 1b. The Missing-Day Problem </h2>
+<ul>
+
+<p> The spring equinox was set to the date 21 March in the year 325 by 
+the council of Nicea.  By the year 1582, the spring equinox was 
+occurring on the 11th of March.  As a result of generations 
+of concern, the pope ordered that 10 days would be removed from the 
+calendar so that the spring equinox would return to 21 March.
+It was decided that the days 5-14 October from the year 1582 would
+be skipped during the transformation from the Julian to Gregorian calendar.
+(Those dates were acceptable because there were no important feasts 
+taking place during the days being skipped).
+
+
+<p> There was great resistance to the adoption of the Gregorian calendar,
+and its acceptance was determined locally. Protestant and Orthodox parts
+of Europe were particularly resistant. In general the Protestant world 
+adopted the Gregorian calendar in the eighteenth century, while the 
+Orthodox world did not accept it until the twentieth.  For example,
+England converted in 1752, while Russia and Greece did not adopt
+the Gregorian calendar until 1918 and 1924 respectively.
+
+<a name=1c> </a>
+</ul>
+<h2> 1c. The New-Year's-Day Problem </h2>
+<ul>
+
+<p> The year of pagan Romans at the start of the fourth century had begun
+on January first.  Christian communities were encouraged to differentiate 
+themselves by adopting more significant feast days for the start of
+the year.  The first day of the year in the Julian calendar was March
+25.  Ironically, the Gregorian reform re-instituted January 1 as the 
+first day of the year.
+
+<p> The <i>hcal</i> program does not currently make provisions for 
+variation in year demarkations, but some of the principal 
+traditions are noted in <a href=#4>section 4</a> below
+
+<a name=1d> </a>
+</ul>
+<h2> 1d. The Two-Step-Adoption Problem </h2>
+<ul>
+
+<p> Some regions adopted the first of January as the beginning of the
+year <i>before</i> they adopted the Gregorian calendar.  Other
+regions, such as Venice, kept March 1 as their new year even after they
+adopted the Gregorian calendar -- until the collapse of the Republic
+of Venice in 1797.
+
+<a name=1e> </a>
+</ul>
+<h2> 1e. The Variable-Adoption Problem </h2>
+<ul>
+
+<p> There was great fragmentation of time-keeping methods in some
+parts of Europe over the first two or so centuries of Gregorian
+reform.  Almost every province of Germany and Switzerland, for
+example, had an independent practice, often reflecting vicissitudes
+in its religious persuasion.  Sweden reverted to the Julian calendar
+in 1600 after once switching to the Gregorian calendar and did
+not re-adopt the Gregorian calendar again until 1753.
+
+
+<a name=2> </a>
+</ul>
+<h2> 2. Localization in the <i>hcal</i> program </h2>
+<ul>
+
+<p> The hcal program takes as input one of the following <i>locales</i>
+to generate a historic calendar for the specified region.
+
+<p>
+<table>
+
+<tr><td valign=top> <i> Austria </i>
+    <td> 
+        calendar for Austria [also Bohemia and
+        Slovakia] created by dropping the days 7-16 January 
+        from the year 1584.
+    </tr>
+
+<tr><td valign=top> <i> Bavaria </i>
+    <td> 
+        calendar for Bavaria and other South German
+        provinces created by dropping the days 6-15 October 
+        from the year 1583.
+    </tr>
+
+<tr><td valign=top> <i> England </i>
+    <td> 
+        calendar for the United Kingdom (England, Scotland,
+        Wales, Ireland, and the British colonies created by 
+        dropping the days 3-13 September 1752.
+    </tr>
+
+<tr><td valign=top> <i> France </i>
+    <td> 
+        calendar for France created by subtracting the days
+        10-19 December from the month of December 1582.
+        (The French Revolutionary calendar is not considered
+         in hcal).
+    </tr>
+
+<tr><td valign=top> <i> Greece </i>
+    <td> 
+        calendar for Greece created by dropping the days
+        10-22 March 1924.
+    </tr>
+
+<tr><td valign=top width=100> <i> Gregorian </i>
+    <td> generates a Gregorian calendar for all input dates
+    </tr>
+
+<tr><td valign=top> <i> Holland </i>
+    <td> 
+        calendar for Amsterdam, Delft, Haarlem and Rotterdam
+        created by dropping the days 22-31 December from the year 1582.
+    </tr>
+
+<tr><td valign=top> <i> Hungary </i>
+    <td> 
+        calendar for Hungary [also parts of Poland]
+        created by dropping the days 22-31 October from the year 1587.
+    </tr>
+
+<tr><td valign=top> <i> Italy </i>
+    <td> 
+        calendar for Rome (Italy) [also Portugal, Spain,
+        and parts of Poland] created by subtracting the 
+        days 5-14 October from the year 1582.
+    </tr>
+
+<tr><td valign=top> <i> Julian </i>
+    <td> generates a Julian calendar for all input dates
+    </tr>
+
+<tr><td valign=top> <i> Norway </i>
+    <td> 
+        calendar for Norway [also Denmark and many
+        North German provinces] created by dropping the 
+        days 19-28 February from the year 1700.
+    </tr>
+
+<tr><td valign=top> <i> Russia </i>
+    <td> 
+        calendar for Russia and the other provinces
+        of the former U.S.S.R. created by dropping the 
+        days 1-13 February from the year 1918.
+    </tr>
+
+<tr><td valign=top> <i> Switzerland, Lucerne </i>
+    <td> 
+        calendar for Lucerne, Uri, Zug and Friburg
+        created by dropping the days 12-21 January from the year 1584.
+    </tr>
+
+<tr><td valign=top> <i> Switzerland, Zurich </i>
+    <td> 
+        calendar for Zurich, Bern, Basil, Geneva, and Baden
+        created by dropping the days 1-11 January from the year 1701.
+    </tr>
+
+<tr><td valign=top> <i> Turkey </i>
+    <td> 
+        calendar for Turkey created by dropping the days
+        19-31 December from the year 1926.
+    </tr>
+
+</table>
+
+<a name=3> </a>
+</ul>
+<h2> 3. Algorithm for Generating Julian and Gregorian Calendars </h2>
+<ul>
+
+<p> The Julian calendar is usually 365 days long.  If the
+year is divisible by 4 without a remainder, then the 
+29th of February is added to the year making the length of 
+the year 366 days. 
+
+<p>1 Jan of the year 1 A.D. is on Saturday in the Julian
+calendar and is on Monday in the Gregorian calendar (the
+Gregorian calendar is two days behind the Julian calendar 
+at this point).  
+
+<p> The Gregorian calendar is similar to the Julian calendar,
+but if the year is divisible by 100, then there is no leap day
+in that year; however if the year is divisible by 400, then 
+the leap day is included.  Thus, the year
+2000 is a leap year in the Gregorian calendar, but the year
+1900 is not.
+
+
+<p> The first day for which the two calendars are in synchronization is
+1 March 200.  From then through 28 February 300, the dates
+in each calendar are identical, <i>e.g.</i>, the date 
+5 May 267 in one calendar is also the date 5 May 267 in the other
+calendar.
+
+<p> The day of the week is always the same for days occurring in the 
+Julian and Gregorian calendars (<i>e.g.</i>, Tuesday in the Gregorian
+calendar is always Tuesday in the Julian calendar)
+; however, the day of the month
+for any given solar day is different in each calendar.  About once a century, 
+the Julian calendar shifts ahead of the Gregorian calendar by one day.  
+The table below shows the number of days by which the Julian calendar
+is in advance of the Gregorian calendar:
+<ul>
+<pre>
+                No. of days Julian dates are      
+     Years        ahead of Gregorian dates. 
+==================================================
+   201 -  299           0  
+   301 -  499           1  
+   501 -  599           2
+   601 -  699           3
+   701 -  899           4
+   901 -  999           5
+  1001 - 1099           6
+  1101 - 1299           7
+  1301 - 1399           8
+  1401 - 1499           9
+  1501 - 1699          10
+  1701 - 1799          11
+  1801 - 1899          12
+  1901 - 2099          13
+  2101 - 2199          14
+</pre>
+</ul>
+
+<p> Note that Gregorian calendar dates before October of 1582 are
+only meaningful in a retroactive sense and were not known or utilized 
+by earlier periods of history.  Gregorian dates earlier than October 
+of 1582 are therefore termed <i>proleptic</i> (<i>i.e.</i>, 
+hypothetical).
+
+<a name=4> </a>
+</ul>
+<h2> 4. Partial Listing of New Year's Dates </h2>
+<ul>
+
+New Year = January 1:
+<ul>
+<li> France (1567-1793; from 1805)
+<li> Genoa (from 1476)
+<li> Geneva (from 1575)
+<li> Hungary (from 14<sup><small>th</small></sup> century)
+<li> Modena (from start of 16<sup><small>th</small></sup> century)
+<li> Norway (from later half of 15<sup><small>th</small></sup> century)
+<li> Poland (from 1361)
+<li> Rome (from 1621)
+<li> Scotland (from 1600)
+<li> Spain (from 17<sup><small>th</small></sup> century, 
+   replacing numerous other systems running in parallel).
+</ul>
+
+<p>
+New Year = March 1:
+<ul>
+<li> Venice (to 1797 in most official records; may be from
+January 1 in informal records)
+</ul>
+
+<p> 
+New Year = March 25 (Feast of the Annunciation):
+<ul>
+<li> England (13<sup><small>th</small></sup> century until 1752)
+<li> Florence (10<sup><small>th</small></sup> century until 1749)
+<li> Ireland (13<sup><small>th</small></sup> century until 1752)
+<li> Naples (from 1270)
+<li> Pisa (through 1749; the year was recorded one year ahead of that
+     of Florence).
+</ul>
+
+<p>
+New Year = Easter (movable):
+<ul>
+<li> Cologne (prior to 1310; the university used it until 1428)
+<li> Flanders (Low Countries) (until 1576).
+</ul>
+
+<p>
+New Year = September 1:
+<ul>
+<li> Greece (until 15<sup><small>th</small></sup> century)
+<li> Russia (11<sup><small>th</small></sup> century until 1725)
+</ul>
+
+<p>
+New Year = December 25 (Christmas):
+<ul>
+<li> Bavaria (into the 15<sup><small>th</small></sup> century)
+<li> Germany (from early middle ages)
+<li> Milan (15<sup><small>th</small></sup> into
+       18<sup><small>th</small></sup>century)
+<li> Padua (12<sup><small>th</small></sup> into
+       17<sup><small>th</small></sup>century)
+<li> Rome (10<sup><small>th</small></sup> to
+       17<sup><small>th</small></sup>centuries; individual popes
+       sometimes imposed other calendars)
+</ul>
+
+
+<a name=5> </a>
+</ul>
+<h2> 5. Sources for Determining Transition Dates </h2>
+<ul>
+
+<p> The following references are particularly recommended.  Starred
+items were consulted in determining the dates on which the Gregorian
+calendar was adopted.
+
+<p>
+<dl>
+<dt> <tt> Borst, Arno.  <i>The Ordering of Time</i>, tr. A. Winnard.
+Chicago:  University of Chicago Press, 1993. </tt>
+<dd> A good overview of the mathematics of time-keeping, with
+particular reference to "calculating machines."
+<br><br>
+
+<dt> <b>*</b> <tt> Cappelli, A[driano].  <i>Cronologia, cornografia, e
+     calendario perpetua</i>, 3<sup><small>rd</small></sup>
+rev. edn.  Milan: Ulrich Hoepli, 1969. </tt>
+<dd> The Bible of Continental time-keeping, giving extensive
+biographical dates for popes, emperors, dukes, and princes together
+with tables for the dating of movable feasts, such as Easter, 
+from early times through the year 2100.
+<br><br>
+
+<dt> <tt> Dershowitz, N., and E.M. Reingold.  <i>Calendrical
+Calculations</i>. Cambridge: Cambridge University Press, 1997. </tt>
+<dd> Contains date-conversion algorithms in LISP.
+<br><br>
+
+<dt> <tt> Maiello, Francesco.  <i>Storia del calendario: La misurazione 
+del tempo, 1450-1800.</i>  Turin: Giulio Einaudi, 1994. </tt>
+<dd> A rich cultural history of the calendar during its years of
+change, when the author estimates that several thousand variations
+came into being.  Particularly useful for French and Italian history.
+<br><br>
+
+<dt> <b>*</b> <tt> Richards, E.G. <i>Mapping Time: The Calendar and Its 
+History</i>.  Oxford University Press, 1999. </tt>
+<dd> Gives numerous algorithms for a large number of distinctly
+different times, cultures, and time-keeping problems.  
+
+</dl>
+
+<pre>
+
+
+
+</pre>
+</ul>
+<hr noshade>
+Craig Stuart Sapp, <i>craig@ccrma.stanford.edu</i>
+<br>
+Eleanor Selfridge-Field, <i>esf@ccrma.stanford.edu</i>
+
+
+</body>
+</html>
